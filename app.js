@@ -1,6 +1,7 @@
 require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -30,11 +31,13 @@ async function recreateDB(){
  if(err) return console.error(err);
  console.log("First object saved")
  });
+ 
  let instance2 = new Costume({costume_type:"Western", size:'Small', cost:10});
  instance2.save( function(err,doc) {
  if(err) return console.error(err);
  console.log("Second object saved")
 });
+
  let instance3 = new Costume({costume_type:"Party Wear", size:'Large',cost:30});
  instance3.save( function(err,doc) {
  if(err) return console.error(err);

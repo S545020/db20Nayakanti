@@ -1,8 +1,29 @@
 var Costume = require('../models/costume');
 // List of all Costumes
-exports.costume_list = function(req, res) {
- res.send('NOT IMPLEMENTED: Costume list');
+// List of all Costumes
+exports.costume_list = async function(req, res) {
+    try{
+        theCostumes = await Costume.find();
+        res.send(theCostumes);
+        console.log("Inside try")
+    }
+    catch(err){
+        console.log("Inside Catch")
+        res.send(`{"error": ${err}}`);
+        console.log("After Catch")
+    }
 };
+//view page
+exports.costume_view_all_Page = async function(req, res) {
+    try{
+    theCostumes = await Costume.find();
+    res.render('costumes', { title: 'Costume Search Results', results: theCostumes });
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+   };
 // for a specific Costume.
 exports.costume_detail = function(req, res) {
  res.send('NOT IMPLEMENTED: Costume detail: ' + req.params.id);
