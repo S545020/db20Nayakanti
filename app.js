@@ -74,10 +74,10 @@ app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
 app.use('/resource', resourceRouter);
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  console.log("sdkjbvvvvvvvvvvvvxc")
-  next(createError(404));
-});
+//app.use(function(req, res, next) {
+  //console.log("sdkjbvvvvvvvvvvvvxc")
+  //next(createError(404));
+//});
 
 // error handler
 app.use(function(err, req, res, next) {
