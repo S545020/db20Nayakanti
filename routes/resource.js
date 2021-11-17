@@ -19,5 +19,6 @@ costume_controller.costume_update_put);
 router.get('/costumes/:id', costume_controller.costume_detail);
 // GET request for list of all Costume items.
 router.get('/costumes', costume_controller.costume_list);
-router.get('/', costume_controller.costume_view_all_Page);
+//router.get('/', costume_controller.costume_view_all_Page);
+
 module.exports = router;

@@ -25,7 +25,6 @@ exports.costume_view_all_Page = async function(req, res) {
     }
    };
 // for a specific Costume.
-// for a specific Costume.
 exports.costume_detail = async function(req, res) {
     console.log("detail" + req.params.id)
     try {
@@ -36,7 +35,6 @@ exports.costume_detail = async function(req, res) {
     res.send(`{"error": document for id ${req.params.id} not found`);
     }
    };
-// Handle Costume create on POST.
 // Handle Costume create on POST.
 exports.costume_create_post = async function(req, res) {
     console.log(req.body)
@@ -85,3 +83,30 @@ ${JSON.stringify(req.body)}`)
 failed`);
  }
 };
+// Handle a show one view with id specified by query
+
+exports.costume_view_one_Page = async function(req, res) 
+{  
+ console.log("single view for id "  + req.query.id)  
+  try{       
+     //console.log("test");
+     result = await Costume.findById(req.query.id);  
+     res.render('costumeDetail', { title: 'Costume Detail', toShow: result });  
+    }   
+  catch(err){   
+    res.status(500)    
+    res.send(`{'error': '${err}'}`); 
+   }};
+   // Handle building the view for creating a costume.
+// No body, no in path parameter, no query.
+// Does not need to be async
+exports.costume_create_Page = function(req, res) {
+    console.log("create view")
+    try{
+    res.render('costumecreate', { title: 'Costume Create'});
+    }
+    catch(err){
+    res.status(500)
+    res.send(`{'error': '${err}'}`);
+    }
+   };
