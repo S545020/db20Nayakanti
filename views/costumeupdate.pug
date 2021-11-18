@@ -10,20 +10,19 @@ block content
   - let costumesize = toShow.size
     
     div.row(class='mb-2')
-        div.mr-1 ID is
-        div #{costumeid}
+        div.mr-1 ID is: #{costumeid}
     - let actionid = "/resource/costumes/" + costumeid
     form(id='costumeForm', action= actionid, method="PUT")
         div.form-group
-            label.costumeAttr(for='costume_type') Costume Type
+            label.costume(for='costume_type') Costume Type
             input#costume_type(type='text', name='costume_type', value= costume_type )
         div.form-group
             label.costumeAttr(for='costumecost') Costume Price
             input#costumeprice(type='number', name='costumecost', value= cost)
         div.form-group
-            label.costumeAttr(for='costumesize') Costume Size
+            label.costume(for='costumesize') Costume Size
             input#costumesize(type='text', name='costumesize', value= size )
-
+        br
         input(type="submit")
 
     script.
@@ -43,4 +42,4 @@ block content
             // TODO handle error
             alert("Update failed " + error )
         });
-        });
+      });
