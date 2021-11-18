@@ -6,7 +6,31 @@ body {
 a {
   color: #00B7FF;
 }
-.costumeAttr {
-  background-color: aquamarine;
-  width: 120px;
- }
+
+
+.costumeAttr { 
+  width: 500px; 
+  font: 300;
+  height: 50px;
+  font-size: 20px;
+  background-color: darkseagreen;
+} 
+
+h1{
+  margin-left: -10px;
+  text-shadow: 2px 2px #0077ff;
+  font: bold;
+  width: 500px;
+  color: brown;
+}
+.costume{
+  width: 500px; 
+  font: 300;
+  height: 50px;
+  font-size: 20px;
+  background-color:gainsboro;
+
+}
+div{
+  align-items: center;
+}
