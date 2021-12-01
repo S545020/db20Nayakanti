@@ -1,4 +1,5 @@
 var Costume = require('../models/costume');
+
 // List of all Costumes
 // List of all Costumes
 exports.costume_list = async function(req, res) {
@@ -68,7 +69,7 @@ exports.costume_update_put = async function(req, res) {
  console.log(`update on id ${req.params.id} with body
 ${JSON.stringify(req.body)}`)
  try {
- let toUpdate = await Costume.findById( req.params.id)
+ let toUpdate = await Costume.findById(req.params.id)
  // Do updates of properties
  if(req.body.costume_type)
  toUpdate.costume_type = req.body.costume_type;
@@ -123,6 +124,7 @@ exports.costume_update_Page = async function(req, res) {
     res.send(`{'error': '${err}'}`);
     }
    };
+
    // Handle a delete one view with id from query
 exports.costume_delete_Page = async function(req, res) {
     console.log("Delete view for id " + req.query.id)
